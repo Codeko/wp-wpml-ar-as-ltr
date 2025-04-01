@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP wpml as ltr
+ * Plugin Name: WPML ar as ltr
  * Description: Override 'ar' code language to be 'ltr'
  * Version: 1.0.2
  */
