@@ -35,13 +35,8 @@ function wp_wpml_ar_as_ltr_github_plugin_updater() {
     }
 }
 
-function wp_wpml_ar_as_ltr_ar_is_argentine_filter()
-{
-    add_filter( 'wpml_rtl_languages_codes',  'wp_wpml_ar_as_ltr_filter_wpml_rtl_languages_codes');
-}
-
 function wp_wpml_ar_as_ltr_filter_wpml_rtl_languages_codes($array_codes){
     return [];
 }
 
-add_action('init', 'wp_wpml_ar_as_ltr_ar_is_argentine_filter');
+add_filter( 'wpml_rtl_languages_codes',  'wp_wpml_ar_as_ltr_filter_wpml_rtl_languages_codes');
