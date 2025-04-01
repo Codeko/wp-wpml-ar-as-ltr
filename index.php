@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP wpml as ltr
  * Description: Override 'ar' code language to be 'ltr'
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 include_once('updater.php');
