@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP wpml as ltr
- * Description: Un plugin de ejemplo para WordPress.
+ * Description: Override 'ar' code language to be 'ltr'
  * Version: 1.0.0
  */
 
