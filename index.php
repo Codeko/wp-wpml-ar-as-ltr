@@ -1,8 +1,10 @@
 <?php
 /**
- * Plugin Name: WPML ar as ltr
+ * Plugin Name: POLA-CDK - WPML ar as ltr
  * Description: Override 'ar' code language to be 'ltr'
  * Version: 1.0.2
+ * Author: Pola Network
+ * Author URI: https://github.com/Codeko/wp-wpml-ar-as-ltr
  */
 
 if (!defined('ABSPATH')) {
