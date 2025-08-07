@@ -2,10 +2,12 @@
 /**
  * Plugin Name: POLA-CDK - WPML ar as ltr
  * Description: Override 'ar' code language to be 'ltr'
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Pola Network
  * Author URI: https://github.com/Codeko/wp-wpml-ar-as-ltr
  */
+
+use PolaCDK\PolaCDK_Control;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -14,12 +16,7 @@ if (!defined('ABSPATH')) {
 add_action( 'init', 'wp_wpml_ar_as_ltr_github_plugin_updater' );
 
 function wp_wpml_ar_as_ltr_github_plugin_updater() {
-    if (!class_exists( 'WP_GitHub_Updater' ) ){
-        include_once('updater.php');
-    }
-    define( 'WP_GITHUB_FORCE_UPDATE', true );
-
-    if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+    if (class_exists('\PolaCDK\PolaCDK_Control') ) {
         $config = array(
             'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
             'proper_folder_name' => 'wp-wpml-ar-as-ltr', // this is the name of the folder your plugin lives in
@@ -33,7 +30,7 @@ function wp_wpml_ar_as_ltr_github_plugin_updater() {
             'readme' => 'README.md', // which file to use as the readme for the version number
             'access_token' => '', // Access private repositories by authorizing under Plugins > GitHub Updates when this example plugin is installed
         );
-        new WP_GitHub_Updater($config);
+        PolaCDK_Control::plugin_updater($config);
     }
 }
 
@@ -42,3 +39,4 @@ function wp_wpml_ar_as_ltr_filter_wpml_rtl_languages_codes($array_codes){
 }
 
 add_filter( 'wpml_rtl_languages_codes',  'wp_wpml_ar_as_ltr_filter_wpml_rtl_languages_codes');
+
